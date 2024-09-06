@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Raina Islam's Personal Website">
+  <meta name="author" content="Raina Islam">
+
+  <title>Raina Islam</title>
+
+  <link href="bootstrap.min.flatly.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script>   
+  function loadPage(divloc, page) {
+    $.get(page, function(data){
+        console.log(divloc);
+        $(divloc).empty();
+        $(divloc).html(data);
+    });
+  }
+  $(document).ready(function(){
+             $('.load').trigger("click");
+  });
+
+  </script>
+</head>
+
+<body>
+
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+    <div class="container">
+      <a href="../" class="navbar-brand">Raina Islam</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <!-- <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Research Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#publications">Publications</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#teaching">Teaching</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#students">Students</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="files/damevski-vita.pdf">Vita</a>
+          </li>
+        </ul> -->
+        <ul class="navbar-nav ms-md-auto">
+          <li class="nav-item">
+            <a target="_blank" rel="noopener" class="nav-link" href="http://github.com/rainaislam"><i
+                class="bi bi-github"></i> GitHub</a>
+          </li>
+          <li class="nav-item">
+            <a target="_blank" rel="noopener" class="nav-link"
+              href="www.linkedin.com/in/rainaislam577"><i class="bi bi-linkedin"></i> LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">&nbsp;</div>
+    <div class="row">&nbsp;</div>
+    <div class="row">&nbsp;</div>
+    <div class="page-header">
+      <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3">
+          <br/>
+          <div class="row">
+            <img class="img-thumbnail" src="https://avatars.githubusercontent.com/u/142207823?v=4" />
+          </div>
+        </div>
+
+        <div class="col-lg-10 col-md-9 col-sm-8 col-xs-8">
+          <div class="row">&nbsp;</div>
+          <div class="panel panel-default">
+            <div class="panel-body">
+            Undergraduate Student (Final Year)<br/>
+            <a href="https://www.du.ac.bd/body/BCH">Department of Biochemistry and Molecular Biology</a><br/>
+            <a href="http://www.vcu.edu">University of Dhaka</a> - Dhaka, Bangladesh<br/>
+
+            <br/>
+
+            <p>I am a final-year undergraduate student in Biochemistry and Molecular Biology at DU, with a strong passion for Molecular Biology, Bioinformatics and its application in cancer research. My interest in these fields developed during my undergraduate studies, where I completed online courses in oncology and worked on a project focused on challenges in prostate cancer diagnosis. <br>
+            I also learned essential coding languages for Bioinformatics, including Python, R, and also learned SPSS for statistical analysis.I also completed an internship on Molecular Biology which strengthened my interest in this field. A "Basic Bioinformatics" course further solidified my desire to merge my interests in Cancer and Bioinformatics, leading me to pursue a PhD in any of these fields. My skills in coding, cancer biology, molecular biology have prepared me to make a significant contribution to this field, and I am actively seeking PhD opportunities to further develop my skills and advance personalized cancer treatments through Bioinformatics, Molecular biology or other fields of biomedical sciences. 
+            </p>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div> <!-- /container -->
+
+  <div class="row">&nbsp;</div>
+
+  
+
+  <!-- <div id="projects" class="load" onclick="loadPage('#loadprojects', 'projects.html')"> </div>
+  <div id="loadprojects"> </div>
+
+  <div class="row">&nbsp;</div>
+
+  <div id="publications" class="load" onclick="loadPage('#loadpubs', 'pubs.html')"> </div>
+  <div id="loadpubs"> </div>
+-->
+
+  <div class="row">&nbsp;</div>
+  <footer id="footer">
+    <div class="container">
+    <a href="#top">Back to top</a><br>
+    &copy; Copyright Raina Islam, 2024. Theme by <a href="https://bootswatch.com" target="_blank">Bootswatch</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</body>
+
+</html>
