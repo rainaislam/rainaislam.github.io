@@ -67,6 +67,84 @@ $(document).ready(function() {
         }
     });
     
+    // Scroll spy - highlight current section in navigation
+    let isScrolling = false;
+    
+    $(window).scroll(function() {
+        if (!isScrolling) {
+            isScrolling = true;
+            setTimeout(function() {
+                updateActiveNavigation();
+                isScrolling = false;
+            }, 10);
+        }
+    });
+    
+    function updateActiveNavigation() {
+        const scrollTop = $(window).scrollTop();
+        const headerHeight = $('.navbar').outerHeight() || 60;
+        const windowHeight = $(window).height();
+        const documentHeight = $(document).height();
+        
+        // Check if we're at the bottom of the page
+        if (scrollTop + windowHeight >= documentHeight - 10) {
+            // Highlight the last section (awards)
+            $('.navbar-nav .nav-link').removeClass('active');
+            $('.navbar-nav .nav-link[href="#awards"]').addClass('active');
+            return;
+        }
+        
+        // Check if we're at the top of the page
+        if (scrollTop < 100) {
+            $('.navbar-nav .nav-link').removeClass('active');
+            $('.navbar-nav .nav-link[href="#about-section"]').addClass('active');
+            return;
+        }
+        
+        // Define sections with their corresponding selectors and nav links
+        const sections = [
+            { selector: '#about-section', navLink: '#about-section' },
+            { selector: '#loadexperience', navLink: '#experience' },
+            { selector: '#loadprojects', navLink: '#projects' },
+            { selector: '#loadskills', navLink: '#skills' },
+            { selector: '#loadcertifications', navLink: '#certifications' },
+            { selector: '#loadawards', navLink: '#awards' }
+        ];
+        
+        let currentSection = '';
+        let minDistance = Infinity;
+        
+        // Find the section that's most visible or closest to the top
+        sections.forEach(function(section) {
+            const element = $(section.selector);
+            if (element.length && element.is(':visible')) {
+                const elementTop = element.offset().top;
+                const elementBottom = elementTop + element.outerHeight();
+                const viewportTop = scrollTop + headerHeight + 50;
+                
+                // Check if section is in viewport
+                if (elementBottom > viewportTop && elementTop < scrollTop + windowHeight) {
+                    const distance = Math.abs(elementTop - viewportTop);
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        currentSection = section.navLink;
+                    }
+                }
+            }
+        });
+        
+        // Update active navigation link
+        if (currentSection) {
+            $('.navbar-nav .nav-link').removeClass('active');
+            $('.navbar-nav .nav-link[href="' + currentSection + '"]').addClass('active');
+        }
+    }
+    
+    // Initialize active navigation on page load
+    setTimeout(function() {
+        updateActiveNavigation();
+    }, 1500);
+    
     // Add visual styles for navigation
     $('<style>').prop('type', 'text/css').html(`
         .navbar-nav .nav-link {
@@ -76,12 +154,30 @@ $(document).ready(function() {
         
         .navbar-nav .nav-link.active {
             background-color: rgba(255,255,255,0.2) !important;
-            border-radius: 4px;
+            border-radius: 3px;
+            font-weight: 600 !important;
+            position: relative;
+            margin: 0 2px;
+            padding: 0.4rem 0.7rem !important;
+        }
+        
+        .navbar-nav .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: 1.5px;
+            background-color: white;
+            border-radius: 1px;
         }
         
         .navbar-nav .nav-link:hover {
-            background-color: rgba(255,255,255,0.1) !important;
-            border-radius: 4px;
+            background-color: rgba(255,255,255,0.08) !important;
+            border-radius: 3px;
+            margin: 0 2px;
+            padding: 0.4rem 0.7rem !important;
         }
         
         /* Mobile Navigation Fixes */
@@ -96,13 +192,24 @@ $(document).ready(function() {
             
             .navbar-nav .nav-link {
                 color: white !important;
-                padding: 0.75rem 1rem !important;
-                margin: 0.25rem 0;
-                border-radius: 6px;
+                padding: 0.5rem 0.75rem !important;
+                margin: 0.15rem 0;
+                border-radius: 4px;
             }
             
             .navbar-nav .nav-link:hover {
-                background-color: rgba(255,255,255,0.15) !important;
+                background-color: rgba(255,255,255,0.12) !important;
+            }
+            
+            .navbar-nav .nav-link.active {
+                background-color: rgba(255,255,255,0.25) !important;
+                font-weight: 600 !important;
+                border-left: 3px solid white;
+                padding-left: 0.6rem !important;
+            }
+            
+            .navbar-nav .nav-link.active::after {
+                display: none;
             }
         }
         
