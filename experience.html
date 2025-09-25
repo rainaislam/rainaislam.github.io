@@ -1,0 +1,49 @@
+
+<div class="container" id="experience">
+    <h3>Research Experiences</h3>
+
+    <ul class="xp-list">
+    </ul>
+
+    <script>
+      fetch('./data/experience.yml')
+              .then(response => {
+                  if (!response.ok) {
+                      throw new Error(`HTTP error! status: ${response.status}`);
+                  }
+                  return response.text();
+              })
+              .then(data => {
+                  const yml = jsyaml.load(data);
+                  console.log('Loaded experiences:', yml.experiences);
+                  if (yml.experiences && yml.experiences.length > 0) {
+                      yml.experiences.forEach(renderXP);
+                  } else {
+                      document.querySelector('.xp-list').innerHTML = '<li>No experiences found.</li>';
+                  }
+              })
+              .catch(error => {
+                  console.error('Error loading experiences:', error);
+                  document.querySelector('.xp-list').innerHTML = '<li>Error loading experiences. Please check the console for details.</li>';
+              });
+
+      function renderXP(xp, idx) {
+      const highlights = xp.highlights ? xp.highlights.map(highlight => `<li>${highlight}</li>`).join('') : '';
+      const supervisor = xp.supervisor ? `<strong>Supervisor:</strong> ${xp.supervisor}<br>` : '';
+      
+      document.querySelector('.xp-list')
+          .innerHTML +=
+          `<li class="mb-4">
+            <div class="col-lg-12">
+              <h5><strong>${xp.title}</strong></h5>
+              <strong>Institution:</strong> ${xp.institution}<br>
+              <strong>Duration:</strong> ${xp.duration}<br>
+              ${supervisor}
+              ${xp.description} <br>
+              ${highlights ? `<ul class="mt-2">${highlights}</ul>` : ''}
+            </div>
+          </li>`;
+      }
+
+    </script>
+  </div>

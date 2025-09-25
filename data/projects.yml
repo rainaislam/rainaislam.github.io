@@ -1,0 +1,4 @@
+projects: 
+- title: Challenges in Prostate Cancer Diagnosis
+  description: Based on literature review, the project assessed diagnostic limitations and explored biomarkers to improve prostate cancer detection.
+  tags: [cancer, biomarkers, diagnosis]

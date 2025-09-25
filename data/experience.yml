@@ -1,0 +1,23 @@
+experiences:
+ - title: Master's Thesis
+   institution: Nutrition and Health Laboratory, Department of Biochemistry and Molecular Biology, University of Dhaka
+   duration: February 2025 - Present
+   supervisor: Prof. Dr. Md. Zakir Hossain Howlader
+   description: >
+      Investigating the association of vitamin D deficiency and gene polymorphisms in vitamin D metabolism with acute myocardial infarction, conducted on the Bangladeshi population through clinical, biochemical, molecular, and computational approaches.
+   highlights:
+      - Collected and processed patient and control blood samples
+      - Measured plasma vitamin D levels using HPLC
+      - Extracted DNA from blood samples and assessed quality by NanoDrop
+      - Performed PCR amplification, primer design and optimization, and PCR-RFLP genotyping
+      - Conducted statistical and computational analyses and prepared data for sequencing
+
+ - title: Research Intern
+   institution: Molecular Biology, Child Health Research Foundation, Dhaka, Bangladesh
+   duration: August 2024 - September 2025
+   description: >
+      Short-term internship where I explored molecular biology techniques applied to pediatric health research.
+   highlights:
+      - Supported the collection and processing of biological samples
+      - Assisted in the measurement of key metabolites using LC-MS
+      - Contributed to the preparation of research reports and presentations

@@ -1,0 +1,9 @@
+certifications:
+    - title: "Bioinformatics for Computer-Aided Drug Designing (CADD)"
+      organization: "Panacea Research Center, Dhaka, Bangladesh"
+      description: "Workshop on structure-based drug discovery, molecular docking, protein–ligand analysis, ADME/T prediction, and molecular dynamics simulations."
+      date: "Sep 2024"
+    - title: "Cancer Bioinformatics"
+      organization: "BioTed, Dhaka, Bangladesh"
+      description: "Training on transcriptomic analysis using RNA-seq data, including workflow construction, read alignment, and differential expression analysis."
+      date: "Aug 2024"

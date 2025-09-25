@@ -14,6 +14,7 @@
   <link href="bootstrap.min.flatly.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
   <script>   
   function loadPage(divloc, page) {
     $.get(page, function(data){
@@ -41,14 +42,26 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav">
-          <!-- 
+          <li class="nav-item">
+            <a class="nav-link" href="#experience">Research Experiences</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="#projects">Research Projects</a>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" href="#publications">Publications</a>
+            <a class="nav-link" href="#certifications">Certifications</a>
           </li>
-          -->
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#awards">Awards</a>
+          </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="files/rainaislam-academia.pdf" target="_blank">Resume</a>
           </li>
@@ -110,22 +123,26 @@
 
   <div class="row">&nbsp;</div>
 
-  
+  <div id="experience" class="load" onclick="loadPage('#loadexperience', 'experience.html')"> </div>
+  <div id="loadexperience"> </div>
 
-  <!-- <div id="projects" class="load" onclick="loadPage('#loadprojects', 'projects.html')"> </div>
+  <div id="projects" class="load" onclick="loadPage('#loadprojects', 'projects.html')"> </div>
   <div id="loadprojects"> </div>
 
-  <div class="row">&nbsp;</div>
+  <div id="skills" class="load" onclick="loadPage('#loadskills', 'skills.html')"> </div>
+  <div id="loadskills"> </div>
 
-  <div id="publications" class="load" onclick="loadPage('#loadpubs', 'pubs.html')"> </div>
-  <div id="loadpubs"> </div>
--->
+  <div id="certifications" class="load" onclick="loadPage('#loadcertifications', 'certifications.html')"> </div>
+  <div id="loadcertifications"> </div>
+
+  <div id="awards" class="load" onclick="loadPage('#loadawards', 'awards.html')"> </div>
+  <div id="loadawards"> </div>
 
   <div class="row">&nbsp;</div>
   <footer id="footer">
     <div class="container">
     <a href="#top">Back to top</a><br>
-    &copy; Copyright Raina Islam, 2024. Theme by <a href="https://bootswatch.com" target="_blank">Bootswatch</a>
+    &copy; Copyright Raina Islam, 2025. Theme by <a href="https://bootswatch.com" target="_blank">Bootswatch</a>
     </div>
   </footer>
 

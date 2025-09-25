@@ -1,0 +1,45 @@
+<div class="container" id="skills">
+    <h3>Skills</h3>
+
+    <ul class="skills-list">
+    </ul>
+
+    <script>
+      fetch('./data/skill.yml')
+              .then(response => {
+                  if (!response.ok) {
+                      throw new Error(`HTTP error! status: ${response.status}`);
+                  }
+                  return response.text();
+              })
+              .then(data => {
+                  const yml = jsyaml.load(data);
+                  console.log('Loaded skills:', yml.skills);
+                  if (yml.skills && yml.skills.length > 0) {
+                      yml.skills.forEach(renderSkill);
+                  } else {
+                      document.querySelector('.skills-list').innerHTML = '<li>No skills found.</li>';
+                  }
+              })
+              .catch(error => {
+                  console.error('Error loading skills:', error);
+                  document.querySelector('.skills-list').innerHTML = '<li>Error loading skills. Please check the console for details.</li>';
+              });
+
+      function renderSkill(skillItem, idx) {
+        // Extract category and skills from the skill item
+        const category = Object.keys(skillItem)[0];
+        const skills = skillItem[category];
+        
+        document.querySelector('.skills-list')
+            .innerHTML +=
+            `<li class="mb-4">
+              <div class="col-lg-12">
+                <h5><strong>${category}</strong></h5>
+                <p>${skills}</p>
+              </div>
+            </li>`;
+      }
+
+    </script>
+  </div>
