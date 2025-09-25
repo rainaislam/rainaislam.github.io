@@ -81,7 +81,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" id="about-section">
     <div class="row">&nbsp;</div>
     <div class="row">&nbsp;</div>
     <div class="row">&nbsp;</div>
@@ -90,35 +90,70 @@
         <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3">
           <br/>
           <div class="row">
-            <img class="img-thumbnail" src="https://avatars.githubusercontent.com/u/142207823?v=4" />
+            <img class="img-thumbnail" id="profile-image" src="" alt="Profile Image" />
           </div>
         </div>
 
         <div class="col-lg-10 col-md-9 col-sm-8 col-xs-8">
           <div class="row">&nbsp;</div>
           <div class="panel panel-default">
-            <div class="panel-body">
-            Undergraduate Student (Final Year)<br/>
-            <a href="https://www.du.ac.bd/body/BCH">Department of Biochemistry and Molecular Biology</a><br/>
-            <a href="https://www.du.ac.bd/">University of Dhaka</a> - Dhaka, Bangladesh<br/>
-
-            <div class="row">&nbsp;</div>
-            <div class="row">&nbsp;</div>
-            <h5><b>Research Interests</b></h5>
-            <p> Biochemistry, Cancer Biology, Cancer Bioinformatics, Molecular Biology, Personalized Medicine</p>
+            <div class="panel-body" id="about-info">
+              <!-- Content will be loaded dynamically -->
             </div>  
           </div>
         </div>
       </div>
       
       <br>
-      <p>I am a final-year undergraduate student in Biochemistry and Molecular Biology at DU, with a strong passion for Molecular Biology, Bioinformatics and its application in cancer research. My interest in these fields developed during my undergraduate studies, where I completed online courses in oncology and worked on a project focused on challenges in prostate cancer diagnosis. <br>
-      I also learned essential coding languages for Bioinformatics, including Python, R, and also learned SPSS for statistical analysis.I also completed an internship on Molecular Biology which strengthened my interest in this field. A "Basic Bioinformatics" course further solidified my desire to merge my interests in Cancer and Bioinformatics, leading me to pursue a PhD in any of these fields. My skills in coding, cancer biology, molecular biology have prepared me to make a significant contribution to this field, and I am actively seeking PhD opportunities to further develop my skills and advance personalized cancer treatments through Bioinformatics, Molecular biology or other fields of biomedical sciences. 
+      <p id="bio-text">
+        <!-- Bio content will be loaded dynamically -->
       </p>
-
 
     </div>
   </div> <!-- /container -->
+
+  <script>
+    // Load about information from YAML file
+    fetch('./data/about.yml')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then(data => {
+        const yml = jsyaml.load(data);
+        console.log('Loaded about data:', yml.about);
+        if (yml.about) {
+          renderAbout(yml.about);
+        }
+      })
+      .catch(error => {
+        console.error('Error loading about data:', error);
+        // Fallback content in case of error
+        document.getElementById('about-info').innerHTML = '<p>Error loading profile information.</p>';
+      });
+
+    function renderAbout(about) {
+      // Set profile image
+      document.getElementById('profile-image').src = about.profile_image;
+      
+      // Set about information
+      document.getElementById('about-info').innerHTML = `
+        ${about.position}<br/>
+        <a href="${about.department_url}">${about.department}</a><br/>
+        <a href="${about.university_url}">${about.university}</a> - ${about.location}<br/>
+
+        <div class="row">&nbsp;</div>
+        <div class="row">&nbsp;</div>
+        <h5><b>Research Interests</b></h5>
+        <p>${about.research_interests}</p>
+      `;
+      
+      // Set bio text
+      document.getElementById('bio-text').innerHTML = about.bio.replace(/\n/g, '<br>');
+    }
+  </script>
   
 
   <div class="row">&nbsp;</div>
