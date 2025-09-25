@@ -1,11 +1,10 @@
 <!--- projects.html -->
 
+<div class="content-section" id="projects">
+    <h2>Research Projects</h2>
 
-<div class="container" id="projects">
-    <h3>Projects</h3>
-
-    <ul class="project-list">
-    </ul>
+    <div class="projects-container">
+    </div>
 
     <script>
       // read yaml files from projects.yml using js-yaml cdn library
@@ -22,24 +21,28 @@
                   if (yml.projects && yml.projects.length > 0) {
                       yml.projects.forEach(renderProject);
                   } else {
-                      document.querySelector('.project-list').innerHTML = '<li>No projects found.</li>';
+                      document.querySelector('.projects-container').innerHTML = '<p>No projects found.</p>';
                   }
               })
               .catch(error => {
                   console.error('Error loading projects:', error);
-                  document.querySelector('.project-list').innerHTML = '<li>Error loading projects. Please check the console for details.</li>';
+                  document.querySelector('.projects-container').innerHTML = '<p>Error loading projects. Please check the console for details.</p>';
               });
 
       function renderProject(project, idx) {
-      const tags = project.tags ? project.tags.map(tag => `<span class="badge badge-secondary">${tag}</span>`).join(' ') : '';
-      document.querySelector('.project-list')
+      const tags = project.tags ? `<div class="project-tags">${project.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}</div>` : '';
+      const links = project.links ? `<div class="project-links">${Object.entries(project.links).map(([key, url]) => `<a href="${url}" target="_blank">${key}</a>`).join(' | ')}</div>` : '';
+      const duration = project.duration ? `<div class="item-duration">${project.duration}</div>` : '';
+      
+      document.querySelector('.projects-container')
           .innerHTML +=
-          `<li class="mb-3">
-            <div class="col-lg-12">
-              <b>${project.title}</b> -- ${project.description}
-              ${tags ? `<br><div class="mt-2">${tags}</div>` : ''}
-            </div>
-          </li>`;
+          `<div class="project-item">
+              <div class="item-title">${project.title}</div>
+              ${duration}
+              <div class="item-description">${project.description}</div>
+              ${tags}
+              ${links}
+          </div>`;
       }
 
     </script>

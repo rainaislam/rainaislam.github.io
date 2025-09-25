@@ -1,9 +1,9 @@
 
-<div class="container" id="experience">
-    <h3>Research Experiences</h3>
+<div class="content-section" id="experience">
+    <h2>Research Experiences</h2>
 
-    <ul class="xp-list">
-    </ul>
+    <div class="experiences-container">
+    </div>
 
     <script>
       fetch('./data/experience.yml')
@@ -19,30 +19,28 @@
                   if (yml.experiences && yml.experiences.length > 0) {
                       yml.experiences.forEach(renderXP);
                   } else {
-                      document.querySelector('.xp-list').innerHTML = '<li>No experiences found.</li>';
+                      document.querySelector('.experiences-container').innerHTML = '<p>No experiences found.</p>';
                   }
               })
               .catch(error => {
                   console.error('Error loading experiences:', error);
-                  document.querySelector('.xp-list').innerHTML = '<li>Error loading experiences. Please check the console for details.</li>';
+                  document.querySelector('.experiences-container').innerHTML = '<p>Error loading experiences. Please check the console for details.</p>';
               });
 
       function renderXP(xp, idx) {
-      const highlights = xp.highlights ? xp.highlights.map(highlight => `<li>${highlight}</li>`).join('') : '';
-      const supervisor = xp.supervisor ? `<strong>Supervisor:</strong> ${xp.supervisor}<br>` : '';
+      const highlights = xp.highlights ? `<div class="item-highlights"><ul>${xp.highlights.map(highlight => `<li>${highlight}</li>`).join('')}</ul></div>` : '';
+      const supervisor = xp.supervisor ? `<div class="item-supervisor"><strong>Supervisor:</strong> ${xp.supervisor}</div>` : '';
       
-      document.querySelector('.xp-list')
+      document.querySelector('.experiences-container')
           .innerHTML +=
-          `<li class="mb-4">
-            <div class="col-lg-12">
-              <h5><strong>${xp.title}</strong></h5>
-              <strong>Institution:</strong> ${xp.institution}<br>
-              <strong>Duration:</strong> ${xp.duration}<br>
+          `<div class="experience-item">
+              <div class="item-title">${xp.title}</div>
+              <div class="item-institution">${xp.institution}</div>
+              <div class="item-duration">${xp.duration}</div>
               ${supervisor}
-              ${xp.description} <br>
-              ${highlights ? `<ul class="mt-2">${highlights}</ul>` : ''}
-            </div>
-          </li>`;
+              <div class="item-description">${xp.description}</div>
+              ${highlights}
+          </div>`;
       }
 
     </script>

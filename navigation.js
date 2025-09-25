@@ -1,0 +1,128 @@
+// Simple and reliable navigation for Academic Pages design
+
+$(document).ready(function() {
+    
+    // Wait for all content to load, then set up navigation
+    setTimeout(function() {
+        setupNavigation();
+    }, 1000);
+    
+    function setupNavigation() {
+        // Smooth scrolling for navigation links
+        $('.navbar-nav a[href^="#"]').off('click').on('click', function(e) {
+            e.preventDefault();
+            
+            const href = $(this).attr('href');
+            const targetId = href.substring(1);
+            let targetElement;
+            
+            // Find the target element
+            if (targetId === 'about-section') {
+                targetElement = $('#about-section');
+            } else {
+                // Try to find the loaded content first
+                targetElement = $('#load' + targetId);
+                
+                // If not found, try to trigger loading
+                if (targetElement.length === 0) {
+                    const loadTrigger = $('#' + targetId);
+                    if (loadTrigger.length && loadTrigger.hasClass('load')) {
+                        loadTrigger.click();
+                        // Wait and try again
+                        setTimeout(() => {
+                            targetElement = $('#load' + targetId);
+                            if (targetElement.length) {
+                                scrollToElement(targetElement);
+                            }
+                        }, 600);
+                        return;
+                    }
+                }
+            }
+            
+            if (targetElement.length) {
+                scrollToElement(targetElement);
+            }
+        });
+    }
+    
+    function scrollToElement(element) {
+        const headerHeight = $('.navbar').outerHeight() || 60;
+        const offset = element.offset();
+        
+        if (offset) {
+            const targetPosition = offset.top - headerHeight - 20;
+            
+            $('html, body').animate({
+                scrollTop: targetPosition
+            }, 0, 'swing');
+        }
+    }
+    
+    // Close mobile menu when clicking on a link
+    $(document).on('click', '.navbar-nav .nav-link', function() {
+        if ($(window).width() < 992) {
+            $('.navbar-collapse').removeClass('show');
+            $('.navbar-toggler').attr('aria-expanded', 'false');
+        }
+    });
+    
+    // Add visual styles for navigation
+    $('<style>').prop('type', 'text/css').html(`
+        .navbar-nav .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link.active {
+            background-color: rgba(255,255,255,0.2) !important;
+            border-radius: 4px;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background-color: rgba(255,255,255,0.1) !important;
+            border-radius: 4px;
+        }
+        
+        /* Mobile Navigation Fixes */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background-color: var(--primary-color) !important;
+                margin-top: 0.5rem;
+                border-radius: 8px;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            
+            .navbar-nav .nav-link {
+                color: white !important;
+                padding: 0.75rem 1rem !important;
+                margin: 0.25rem 0;
+                border-radius: 6px;
+            }
+            
+            .navbar-nav .nav-link:hover {
+                background-color: rgba(255,255,255,0.15) !important;
+            }
+        }
+        
+        /* Navbar Brand and Toggler Spacing */
+        .navbar-brand {
+            margin-right: auto !important;
+        }
+        
+        .navbar-toggler {
+            border: 2px solid rgba(255,255,255,0.3) !important;
+            padding: 0.5rem 0.75rem !important;
+            margin-left: 1rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.2rem rgba(255,255,255,0.25) !important;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
+    `).appendTo('head');
+});
