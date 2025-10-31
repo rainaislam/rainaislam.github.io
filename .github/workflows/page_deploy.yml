@@ -41,13 +41,14 @@ jobs:
           source_file: |
             ./files/rainaislam-academia.typ
 
+      - name: Remove uni-apply folder
+        run: rm -rf uni-apply
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository excluding uni-apply folder
           path: '.'
-          exclude: |
-            uni-apply
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
