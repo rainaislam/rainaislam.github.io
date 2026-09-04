@@ -10,7 +10,7 @@
 // Space added before each #entry(...) call, independent of the global block spacing above.
 // Reimplemented instead of calling the package's entry() because it always emits a hidden
 // second grid row (with a 0.6em row-gutter) even when no description is passed.
-#let entry(left-text, right-text) = block(above: 8pt, below: 8pt, grid(
+#let entry(left-text, right-text) = block(above: 8pt, below: 10pt, grid(
   column-gutter: 0pt,
   columns: (1fr, auto),
   align(left, [#left-text]),
@@ -39,8 +39,8 @@
   = Raina Islam\
 
   #link("https://rainaislam.github.io/", "rainaislam.github.io") |
-  #link("https://www.linkedin.com/in/rainaislam577/", "linkedin.com/in/rainaislam577") |
-  #link("tel:+16674310307", "+16674310307")
+  #link("https://www.linkedin.com/in/rainaislam577/", "linkedin.com/in/rainaislam577") 
+  //| #link("tel:+16674310307", "+16674310307")
 ]
 
 #v(4pt)
