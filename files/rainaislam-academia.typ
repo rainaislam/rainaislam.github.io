@@ -107,21 +107,7 @@
   [_2026_]
 )
 
-#section("UNDERGRADUATE PROJECT")
-
-#entry(
-  [
-    *Challenges in Prostate Cancer Diagnosis*\
-    _(Department of Biochemistry and Molecular Biology, University of Dhaka)_\
-    _Supervisors: Dr. Md. Zakir Hossain Howlader, Dr. A.H.M. Nurun Nabi, Dr. Md. Ismail Hosen_
-
-    - Conducted a literature review of current prostate cancer diagnostic approaches, identifying key limitations in sensitivity and specificity
-    - Evaluated candidate biomarkers for their potential to enable earlier, non-invasive detection
-  ],
-  [_Jan 2023_]
-)
-\
-  #section("HONORS AND AWARDS ")
+#section("HONORS AND AWARDS ")
   #entry(
   [
     *National Science and Technology Fellowship*  \
@@ -137,7 +123,7 @@
   [
     *Nutrtition and Health Laboratory*\
     _(Department of Biochemistry & Molecular Biology, University of Dhaka)_\ 
-    Trained and assessed 6 graduate thesis students in laboratory techniques and experimental protocols.
+    Trained and assessed 6 graduate thesis students in laboratory techniques and experimental protocols. 
   ],
   [_Jan 2026- July 2026_]
 )
@@ -148,6 +134,20 @@
   - *Computational Tools & Software*: NCBI BLAST, Ensembl Genome Browser, UniProt, dbSNP, RegulomeDB, ExPaSy, MEGA, Primer3Plus, OligoAnalyzer, NEBcutter, UCSC in silico PCR, PyMOL, BIOVIA Discovery Studio, NetworkAnalyst, Chromeleon 6.8, BioRender
   - *Statistical Tools:* GraphPad Prism, SPSS, MS Excel
   - *Programming Language:* Python, R (basic)
+
+#section("UNDERGRADUATE PROJECT")
+
+#entry(
+  [
+    *Challenges in Prostate Cancer Diagnosis*\
+    _(Department of Biochemistry and Molecular Biology, University of Dhaka)_\
+    _Supervisors: Dr. Md. Zakir Hossain Howlader, Dr. A.H.M. Nurun Nabi, Dr. Md. Ismail Hosen_
+
+    - Conducted a literature review of current prostate cancer diagnostic approaches, identifying key limitations in sensitivity and specificity
+    - Evaluated candidate biomarkers for their potential to enable earlier, non-invasive detection
+  ],
+  [_Jan 2023_]
+)
   
   
   #section("CERTIFICATIONS")
