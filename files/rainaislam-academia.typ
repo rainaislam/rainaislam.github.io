@@ -10,15 +10,19 @@
 // Space added before each #entry(...) call, independent of the global block spacing above.
 // Reimplemented instead of calling the package's entry() because it always emits a hidden
 // second grid row (with a 0.6em row-gutter) even when no description is passed.
-#let entry(left-text, right-text) = block(above: 8pt, below: 10pt, grid(
+// The optional description is placed in a second row spanning both columns, so it can use
+// the full page width instead of being confined to the left column.
+#let entry(left-text, right-text, description: none) = block(above: 8pt, below: 10pt, grid(
   column-gutter: 0pt,
+  row-gutter: 10pt,
   columns: (1fr, auto),
   align(left, [#left-text]),
   align(right, [#right-text]),
+  ..if description != none { (grid.cell(colspan: 2, description),) } else { () },
 ))
 
 // Space added before each #section(...) call, independent of the global block spacing above.
-#let section(title, note: none) = block(above: 10pt, below: 10pt)[#base-section(title, note: note)]
+#let section(title, note: none) = block(above: 8pt, below: 10pt)[#base-section(title, note: note)]
 
 #set par(
     leading: 8pt,
@@ -29,6 +33,8 @@
 )
 
 #show: styling
+// Section header font size (EDUCATION, SKILLS, etc.)
+#show heading.where(level: 2): set text(size: 11pt)
 // variable to control the spacing between entries
 #set page(
   margin: (left: 1.6cm, right: 1.6cm, top: 1.4cm),
@@ -66,8 +72,7 @@
 #section("RESEARCH EXPERIENCE")
 #entry(
   [
-    *Graduate Student\
-    Nutrition and Health Laboratory*\
+    *Graduate Student, Nutrition and Health Laboratory*\
     _(Department of Biochemistry and Molecular Biology, University of Dhaka)_\
     _Supervisor: Dr. Md. Zakir Hossain Howlader, Professor_
   ],
@@ -86,8 +91,7 @@
 #v(5pt)
 #entry(
   [
-    *Research Intern*\
-    *Molecular Biology*\
+    *Research Intern*, *Molecular Biology*\
     _(Child Health Research Foundation, Dhaka, Bangladesh)_\
     Short-term internship exploring molecular biology techniques applied to pediatric health research.
     
@@ -108,24 +112,36 @@
 )
 
 #section("HONORS AND AWARDS ")
-  #entry(
+#entry(
   [
     *National Science and Technology Fellowship*  \
     _(Ministry of Science and Technology, Bangladesh)_  \
     Awarded the National Science and Technology Fellowship to support M.S. thesis research through a competitive proposal and interview process.
   ],
   [_2025_]
-  )
-  
-  #section("TEACHING & MENTORING EXPERIENCE")
+)
+#entry(
+  [
+    *2nd Runner-Up: The Art of Science Communication*  \
+    _(Department of Biochemistry and Molecular Biology, University of Dhaka)_  \
+    Team-based competition on science communication; wrote an article and prepared a graphical
+abstract to explain a complex molecular biology topic in an accessible storytelling format.
+  ],
+  [_2024_]
+)
+
+
+#section("TEACHING & MENTORING EXPERIENCE")
 
 #entry(
   [
-    *Nutrtition and Health Laboratory*\
-    _(Department of Biochemistry & Molecular Biology, University of Dhaka)_\ 
-    Trained and assessed 6 graduate thesis students in laboratory techniques and experimental protocols. 
+    *Nutrition and Health Laboratory*\
+    _(Department of Biochemistry & Molecular Biology, University of Dhaka)_
   ],
-  [_Jan 2026- July 2026_]
+  [_Jan 2026 – July 2026_],
+  description: [
+    Trained a new cohort of 6 thesis students with no prior wet-lab experience in core molecular biology techniques and biochemical analyses, then assessed their progression to independent bench work.
+  ],
 )
 
   #section("SKILLS")
@@ -181,7 +197,6 @@
   #section("REFERENCES")
   #grid(
   columns: (1fr, 1fr),
-  rows: (auto, 60pt),
   gutter: 16pt,
   [
     *Dr.Md. Zakir Hossain Howlader, Professor*  #linebreak()
