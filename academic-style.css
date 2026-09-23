@@ -313,6 +313,20 @@ body {
   font-size: 0.9rem;
 }
 
+.item-projects {
+  margin-top: 0.75rem;
+}
+
+.item-project + .item-project {
+  margin-top: 0.75rem;
+}
+
+.item-project-title {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+
 /* Skills Grid */
 .skills-grid {
   display: grid;

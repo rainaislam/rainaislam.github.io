@@ -1,17 +1,20 @@
 experiences:
  - title: Master's Thesis
    institution: Nutrition and Health Laboratory, Department of Biochemistry and Molecular Biology, University of Dhaka
-   duration: February 2025 - Present
+   duration: February 2025 - July 2026
    supervisor: Prof. Dr. Md. Zakir Hossain Howlader
-   description: >
-      Investigating the association of vitamin D deficiency and gene polymorphisms in vitamin D metabolism with acute myocardial infarction, conducted on the Bangladeshi population through clinical, biochemical, molecular, and computational approaches.
-   highlights:
-      - Collected and processed patient and control blood samples
-      - Measured plasma vitamin D levels using HPLC
-      - Extracted DNA from blood samples and assessed quality by NanoDrop
-      - Performed PCR amplification, primer design and optimization, and PCR-RFLP genotyping
-      - Conducted statistical and computational analyses and prepared data for sequencing
-
+   projects:
+      - title: |
+         <strong>Thesis project:</strong> Exploring genetic association with essential hypertension in the Bangladeshi population through molecular biology techniques
+        highlights:
+           - Extracted DNA from blood samples of patients and control subjects obtained from a diagnostic center
+           - Optimized PCR to amplify the target regions and employed the RFLP method for genotyping analysis
+           - Conducted statistical and computational analyses and prepared data for sequencing
+      - title: |
+         <strong>Related project:</strong> Investigating the relationship between vitamin D status, genetic variation, and cardiovascular health in the Bangladeshi population through clinical, biochemical, molecular, and computational approaches.
+        highlights:
+           - Measured plasma vitamin D levels using HPLC
+           - Extracted DNA from blood samples, performed PCR amplification, primer design and optimization, and PCR-RFLP genotyping
  - title: Research Intern
    institution: Molecular Biology, Child Health Research Foundation, Dhaka, Bangladesh
    duration: August 2024 - September 2025

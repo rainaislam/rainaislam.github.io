@@ -30,7 +30,13 @@
       function renderXP(xp, idx) {
       const highlights = xp.highlights ? `<div class="item-highlights"><ul>${xp.highlights.map(highlight => `<li>${highlight}</li>`).join('')}</ul></div>` : '';
       const supervisor = xp.supervisor ? `<div class="item-supervisor"><strong>Supervisor:</strong> ${xp.supervisor}</div>` : '';
-      
+      const description = xp.description ? `<div class="item-description">${xp.description}</div>` : '';
+      const projects = xp.projects ? `<div class="item-projects">${xp.projects.map(p => `
+          <div class="item-project">
+              <div class="item-project-title">${p.title}</div>
+              ${p.highlights ? `<div class="item-highlights"><ul>${p.highlights.map(h => `<li>${h}</li>`).join('')}</ul></div>` : ''}
+          </div>`).join('')}</div>` : '';
+
       document.querySelector('.experiences-container')
           .innerHTML +=
           `<div class="experience-item">
@@ -38,8 +44,9 @@
               <div class="item-institution">${xp.institution}</div>
               <div class="item-duration">${xp.duration}</div>
               ${supervisor}
-              <div class="item-description">${xp.description}</div>
+              ${description}
               ${highlights}
+              ${projects}
           </div>`;
       }
 
