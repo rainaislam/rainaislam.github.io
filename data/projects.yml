@@ -1,4 +1,5 @@
 projects: 
 - title: Challenges in Prostate Cancer Diagnosis
   description: Based on literature review, the project assessed diagnostic limitations and explored biomarkers to improve prostate cancer detection.
-  tags: [cancer, biomarkers, diagnosis]
+- title: Laboratory Practices at International Centre for Diarrhoeal Disease Research, Bangladesh (icddr,b)
+  description: Documented the workflows and biosafety practices of seven research and diagnostic laboratories at icddr,b, covering sample handling, PCR and sequencing pipelines, immunoassays, and animal research facilities.
