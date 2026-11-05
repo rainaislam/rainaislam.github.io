@@ -78,11 +78,12 @@
   ],
   [_Feb 2025 – July 2026_]
 )
-*Thesis Project:* Exploring genetic association with essential hypertension in Bangladeshi Population through molecular biology techniques.
+*Thesis Project:* Investigating genetic associations with essential hypertension in the Bangladeshi population using molecular biology and computational approaches.
 
-- Extracted DNA from blood samples of patients and control subjects obtained from a diagnostic center
-- Optimized PCR to amplify the target regions and employed the RFLP method for genotyping analysis
-- Conducted statistical and computational analyses and prepared data for sequencing
+- Selected candidate SNPs through literature review and bioinformatics analysis and designed primers for targeted genotyping.
+- Extracted genomic DNA from clinical blood samples and optimized PCR amplification conditions.
+- Performed PCR-RFLP genotyping and prepared samples for sequencing-based validation.
+- Conducted statistical and computational analyses to investigate genetic associations and interpret experimental findings.
 
 *Related Project:* Investigating the relationship between vitamin D status, genetic variation, and cardiovascular health in the Bangladeshi population through clinical, biochemical, molecular, and computational approaches.
 
@@ -140,7 +141,7 @@ abstract to explain a complex molecular biology topic in an accessible storytell
   ],
   [_Jan 2026 – July 2026_],
   description: [
-    Trained a new cohort of 6 thesis students with no prior wet-lab experience in core molecular biology techniques and biochemical analyses, then assessed their progression to independent bench work.
+    Trained a new cohort of 6 graduate students(MS) with no prior wet-lab experience in core molecular biology techniques and biochemical analyses, then assessed their progression to independent bench work.
   ],
 )
 
