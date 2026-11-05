@@ -84,6 +84,7 @@
 - Extracted genomic DNA from clinical blood samples and optimized PCR amplification conditions.
 - Performed PCR-RFLP genotyping and prepared samples for sequencing-based validation.
 - Conducted statistical and computational analyses to investigate genetic associations and interpret experimental findings
+
 *Related Project:* Investigating the relationship between vitamin D status, genetic variation, and cardiovascular health in the Bangladeshi population through clinical, biochemical, molecular, and computational approaches.
 
 - Measured plasma vitamin D levels using HPLC\
