@@ -76,18 +76,20 @@
     _(Department of Biochemistry and Molecular Biology, University of Dhaka)_\
     _Supervisor: Dr. Md. Zakir Hossain Howlader, Professor_
   ],
-  [_Feb 2025 – July 2026_]
+  [_Feb 2025 – July 2026_],
+  description: [
+    *Thesis Project:* Investigating genetic associations with essential hypertension in the Bangladeshi population using molecular biology and computational approaches.
+
+    - Selected candidate SNPs through literature review and bioinformatics analysis and designed primers for targeted genotyping.
+    - Extracted genomic DNA from clinical blood samples and optimized PCR amplification conditions.
+    - Performed PCR-RFLP genotyping and prepared samples for sequencing-based validation.
+    - Conducted statistical and computational analyses to investigate genetic associations and interpret experimental findings.
+
+    *Related Project:* Investigating the relationship between vitamin D status, genetic variation, and cardiovascular health through clinical, biochemical, molecular, and computational approaches.
+
+    - Quantified plasma vitamin D levels using HPLC and performed molecular analyses involving DNA extraction, PCR optimization, and PCR-RFLP genotyping.
+  ],
 )
-  *Thesis Project:* Investigating genetic associations with essential hypertension in the Bangladeshi population using molecular biology and computational approaches.
-
-  - Selected candidate SNPs through literature review and bioinformatics analysis and designed primers for targeted genotyping.
-  - Extracted genomic DNA from clinical blood samples and optimized PCR amplification conditions.
-  - Performed PCR-RFLP genotyping and prepared samples for sequencing-based validation.
-  - Conducted statistical and computational analyses to investigate genetic associations and interpret experimental findings.
-
-  *Related Project:* Investigating the relationship between vitamin D status, genetic variation, and cardiovascular health through clinical, biochemical, molecular, and computational approaches.
-
-  - Quantified plasma vitamin D levels using HPLC and performed molecular analyses involving DNA extraction, PCR optimization, and PCR-RFLP genotyping.
 #v(5pt)
 #entry(
   [
