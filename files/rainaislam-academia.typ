@@ -45,7 +45,8 @@
   = Raina Islam\
 
   #link("https://rainaislam.github.io/", "rainaislam.github.io") |
-  #link("https://www.linkedin.com/in/rainaislam577/", "linkedin.com/in/rainaislam577") 
+  #link("https://www.linkedin.com/in/rainaislam577/", "linkedin.com/in/rainaislam577") |
+  #link("mailto:islamraina577@gmail.com", "islamraina577@gmail.com")
   //| #link("tel:+16674310307", "+16674310307")
 ]
 
